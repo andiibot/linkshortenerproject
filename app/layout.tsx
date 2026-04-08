@@ -9,7 +9,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="antialiased font-sans">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ClerkProvider>
+          <header className="flex h-16 items-center justify-end gap-4 p-4">
+            <Show when="signed-out">
+              <SignInButton mode="modal">
+                <Button variant="ghost">Sign in</Button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <Button>Sign up</Button>
+              </SignUpButton>
+            </Show>
+            <Show when="signed-in">
+              <UserButton />
+            </Show>
+          </header>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

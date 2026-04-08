@@ -9,6 +9,52 @@ import {
   CopySimple,
 } from "@phosphor-icons/react/dist/ssr"
 import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+const features = [
+  {
+    icon: Lightning,
+    title: "Instant Shortening",
+    description:
+      "Paste any long URL and get a clean, shareable short link in seconds — no sign-up required to try.",
+  },
+  {
+    icon: ChartBar,
+    title: "Click Analytics",
+    description:
+      "Track how many times your links are clicked in real time. Understand your audience and measure engagement.",
+  },
+  {
+    icon: Clipboard,
+    title: "Easy Management",
+    description:
+      "View, edit, and delete all your shortened links from one organised dashboard whenever you need.",
+  },
+  {
+    icon: Globe,
+    title: "Custom Aliases",
+    description:
+      "Replace random slugs with memorable, branded aliases that reflect your content and are easy to share.",
+  },
+  {
+    icon: Lock,
+    title: "Secure & Reliable",
+    description:
+      "Every link is protected and served over HTTPS. Your data stays private and your links stay up.",
+  },
+  {
+    icon: LinkIcon,
+    title: "Shareable Anywhere",
+    description:
+      "Works perfectly in emails, social posts, and messages. Short links look great on any platform.",
+  },
+]
 
 const features = [
   {
