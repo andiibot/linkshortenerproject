@@ -1,5 +1,21 @@
 import "./globals.css"
+
+import { Plus_Jakarta_Sans } from "next/font/google"
+
 import { ThemeProvider } from "@/components/theme-provider"
+import { Button } from "@/components/ui/button"
+import {
+  ClerkProvider,
+  Show,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs"
+
+const fontSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export default function RootLayout({
   children,
@@ -7,7 +23,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="antialiased font-sans">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${fontSans.variable} font-sans antialiased`}
+    >
       <body>
         <ClerkProvider>
           <header className="flex h-16 items-center justify-end gap-4 p-4">

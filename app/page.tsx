@@ -1,13 +1,3 @@
-import {
-  LinkSimple,
-  ChartLine,
-  PencilSimple,
-  QrCode,
-  ShieldCheck,
-  Lightning,
-  ArrowRight,
-  CopySimple,
-} from "@phosphor-icons/react/dist/ssr"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -16,45 +6,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-const features = [
-  {
-    icon: Lightning,
-    title: "Instant Shortening",
-    description:
-      "Paste any long URL and get a clean, shareable short link in seconds — no sign-up required to try.",
-  },
-  {
-    icon: ChartBar,
-    title: "Click Analytics",
-    description:
-      "Track how many times your links are clicked in real time. Understand your audience and measure engagement.",
-  },
-  {
-    icon: Clipboard,
-    title: "Easy Management",
-    description:
-      "View, edit, and delete all your shortened links from one organised dashboard whenever you need.",
-  },
-  {
-    icon: Globe,
-    title: "Custom Aliases",
-    description:
-      "Replace random slugs with memorable, branded aliases that reflect your content and are easy to share.",
-  },
-  {
-    icon: Lock,
-    title: "Secure & Reliable",
-    description:
-      "Every link is protected and served over HTTPS. Your data stays private and your links stay up.",
-  },
-  {
-    icon: LinkIcon,
-    title: "Shareable Anywhere",
-    description:
-      "Works perfectly in emails, social posts, and messages. Short links look great on any platform.",
-  },
-]
+import {
+  ArrowRight,
+  ChartLine,
+  CopySimple,
+  Lightning,
+  LinkSimple,
+  PencilSimple,
+  QrCode,
+  ShieldCheck,
+} from "@phosphor-icons/react/dist/ssr"
 
 const features = [
   {
@@ -117,21 +78,26 @@ export default function Page() {
   return (
     <div className="flex min-h-svh flex-col">
       {/* Nav */}
-      <header className="border-border/60 sticky top-0 z-10 border-b bg-background/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-10 border-b border-border/60 bg-background/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-2 font-semibold">
-            <LinkSimple className="size-5 text-primary" weight="bold" />
+            <LinkSimple className="size-6 text-primary" weight="bold" />
             <span>Snip.ly</span>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground sm:flex">
-            <a href="#features" className="transition-colors hover:text-foreground">
+            <a
+              href="#features"
+              className="transition-colors hover:text-foreground"
+            >
               Features
             </a>
-            <a href="#how-it-works" className="transition-colors hover:text-foreground">
+            <a
+              href="#how-it-works"
+              className="transition-colors hover:text-foreground"
+            >
               How it works
             </a>
           </nav>
-          <Button size="sm">Get started</Button>
         </div>
       </header>
 
@@ -139,7 +105,7 @@ export default function Page() {
         {/* Hero */}
         <section className="mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-20 text-center">
           <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-            <Lightning className="size-3.5" weight="fill" />
+            <Lightning className="size-4" weight="fill" />
             Free to use · No account needed
           </span>
           <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
@@ -155,20 +121,24 @@ export default function Page() {
             <input
               type="url"
               placeholder="https://your-very-long-link.com/goes-here"
-              className="h-8 flex-1 rounded-none border border-border bg-background px-3 text-xs placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+              className="h-10 flex-1 rounded-xl border border-border bg-background px-4 text-sm placeholder:text-muted-foreground focus:ring-2 focus:ring-ring focus:outline-none"
             />
             <Button size="sm" className="shrink-0 gap-1.5">
-              Shorten <ArrowRight className="size-3.5" />
+              Shorten <ArrowRight className="size-4" />
             </Button>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            Press <kbd className="rounded border border-border px-1 font-mono">d</kbd> to
-            toggle dark mode
+            Press{" "}
+            <kbd className="rounded border border-border px-1 font-mono">d</kbd>{" "}
+            to toggle dark mode
           </p>
         </section>
 
         {/* Features */}
-        <section id="features" className="border-t border-border bg-muted/30 px-6 py-16">
+        <section
+          id="features"
+          className="border-t border-border bg-muted/30 px-6 py-16"
+        >
           <div className="mx-auto max-w-5xl">
             <h2 className="mb-2 text-center text-2xl font-bold tracking-tight">
               Everything you need
@@ -180,10 +150,10 @@ export default function Page() {
               {features.map(({ icon: Icon, title, description }) => (
                 <div
                   key={title}
-                  className="flex flex-col gap-3 rounded-none border border-border bg-background p-5"
+                  className="flex flex-col gap-3 rounded-2xl border border-border bg-background p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="flex size-9 items-center justify-center rounded-none border border-border bg-muted">
-                    <Icon className="size-4 text-foreground" weight="duotone" />
+                  <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10">
+                    <Icon className="size-5 text-primary" weight="duotone" />
                   </div>
                   <h3 className="text-sm font-semibold">{title}</h3>
                   <p className="text-xs leading-relaxed text-muted-foreground">
@@ -206,7 +176,10 @@ export default function Page() {
             </p>
             <div className="grid gap-6 sm:grid-cols-3">
               {steps.map(({ number, title, description }, i) => (
-                <div key={number} className="relative flex flex-col items-center text-center">
+                <div
+                  key={number}
+                  className="relative flex flex-col items-center text-center"
+                >
                   {i < steps.length - 1 && (
                     <div className="absolute top-5 left-[calc(50%+2.5rem)] hidden h-px w-[calc(100%-5rem)] bg-border sm:block" />
                   )}
@@ -231,7 +204,7 @@ export default function Page() {
               No account required. Start for free and upgrade as you grow.
             </p>
             <Button size="lg" className="gap-2">
-              Try it now <ArrowRight className="size-4" />
+              Try it now <ArrowRight className="size-5" />
             </Button>
           </div>
         </section>
@@ -241,10 +214,12 @@ export default function Page() {
       <footer className="border-t border-border px-6 py-5">
         <div className="mx-auto flex max-w-5xl items-center justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5">
-            <LinkSimple className="size-3.5" weight="bold" />
+            <LinkSimple className="size-4" weight="bold" />
             <span className="font-medium text-foreground">Snip.ly</span>
           </div>
-          <span>© {new Date().getFullYear()} Snip.ly. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} Snip.ly. All rights reserved.
+          </span>
         </div>
       </footer>
     </div>
