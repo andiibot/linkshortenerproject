@@ -1,4 +1,5 @@
 import "./globals.css"
+import { shadcn } from "@clerk/themes"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export default function RootLayout({
@@ -7,9 +8,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="antialiased font-sans">
+    <html lang="en" suppressHydrationWarning className="font-sans antialiased">
       <body>
-        <ClerkProvider>
+        <ClerkProvider appearance={{ theme: shadcn }}>
           <header className="flex h-16 items-center justify-end gap-4 p-4">
             <Show when="signed-out">
               <SignInButton mode="modal">
