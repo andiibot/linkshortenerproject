@@ -1,21 +1,20 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ArrowRight,
-  ChartLine,
   CopySimple,
   Lightning,
   LinkSimple,
   PencilSimple,
   QrCode,
   ShieldCheck,
-} from "@phosphor-icons/react/dist/ssr"
+} from "@phosphor-icons/react/dist/ssr";
 
 const features = [
   {
@@ -23,12 +22,6 @@ const features = [
     title: "Instant Shortening",
     description:
       "Paste any long URL and get a clean, short link in milliseconds. No sign-up required to get started.",
-  },
-  {
-    icon: ChartLine,
-    title: "Click Analytics",
-    description:
-      "Track every click in real time. See where your audience comes from and measure engagement effortlessly.",
   },
   {
     icon: PencilSimple,
@@ -54,7 +47,7 @@ const features = [
     description:
       "Copy your short link to the clipboard instantly. Share via email, social media, or anywhere else.",
   },
-]
+];
 
 const steps = [
   {
@@ -72,7 +65,7 @@ const steps = [
     title: "Share everywhere",
     description: "Copy, scan, or embed your new short link instantly.",
   },
-]
+];
 
 export default function Page() {
   return (
@@ -115,7 +108,7 @@ export default function Page() {
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground">
             Turn unwieldy URLs into clean, shareable short links — complete with
-            click analytics, custom aliases, and QR codes.
+            custom aliases and QR codes.
           </p>
           <div className="mt-8 flex w-full max-w-md flex-col gap-2 sm:flex-row">
             <input
@@ -223,5 +216,5 @@ export default function Page() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

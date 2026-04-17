@@ -1,27 +1,27 @@
-import "./globals.css"
-import { shadcn } from "@clerk/themes"
+import "./globals.css";
+import { shadcn } from "@clerk/themes";
 
-import { Plus_Jakarta_Sans } from "next/font/google"
+import { Plus_Jakarta_Sans } from "next/font/google";
 
-import { ThemeProvider } from "@/components/theme-provider"
-import { Button } from "@/components/ui/button"
+import { ThemeProvider } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
 import {
   ClerkProvider,
   Show,
   SignInButton,
   SignUpButton,
   UserButton,
-} from "@clerk/nextjs"
+} from "@clerk/nextjs";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html
@@ -48,5 +48,5 @@ export default function RootLayout({
         </ClerkProvider>
       </body>
     </html>
-  )
+  );
 }

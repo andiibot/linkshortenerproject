@@ -1,4 +1,10 @@
-import { integer, pgTable, text, timestamp, varchar } from "drizzle-orm/pg-core"
+import {
+  integer,
+  pgTable,
+  text,
+  timestamp,
+  varchar,
+} from "drizzle-orm/pg-core";
 
 export const links = pgTable("links", {
   id: integer("id").generatedAlwaysAsIdentity().primaryKey(),
@@ -11,4 +17,4 @@ export const links = pgTable("links", {
   updatedAt: timestamp("updated_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
-})
+});

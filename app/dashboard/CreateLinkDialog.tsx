@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"
-import { FormEvent, useState } from "react"
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 
-import { Button } from "@/components/ui/button"
-import * as Dialog from "@radix-ui/react-dialog"
+import { Button } from "@/components/ui/button";
+import * as Dialog from "@radix-ui/react-dialog";
 
-import { createLinkAction } from "./actions"
+import { createLinkAction } from "./actions";
 
 export default function CreateLinkDialog() {
-  const router = useRouter()
-  const [open, setOpen] = useState(false)
-  const [url, setUrl] = useState("")
-  const [slug, setSlug] = useState("")
-  const [error, setError] = useState<string | null>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState("");
+  const [slug, setSlug] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setError(null)
-    setIsSubmitting(true)
+    event.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
 
-    const result = await createLinkAction({ url, slug })
-    setIsSubmitting(false)
+    const result = await createLinkAction({ url, slug });
+    setIsSubmitting(false);
 
     if ("error" in result) {
-      setError(result.error ?? "Unable to create the link.")
-      return
+      setError(result.error ?? "Unable to create the link.");
+      return;
     }
 
-    setUrl("")
-    setSlug("")
-    setOpen(false)
-    router.refresh()
-  }
+    setUrl("");
+    setSlug("");
+    setOpen(false);
+    router.refresh();
+  };
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -116,5 +116,5 @@ export default function CreateLinkDialog() {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-  )
+  );
 }

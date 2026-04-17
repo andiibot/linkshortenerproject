@@ -1,80 +1,80 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"
-import { FormEvent, useState } from "react"
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import * as Dialog from "@radix-ui/react-dialog"
+} from "@/components/ui/card";
+import * as Dialog from "@radix-ui/react-dialog";
 
-import { deleteLinkAction, updateLinkAction } from "./actions"
+import { deleteLinkAction, updateLinkAction } from "./actions";
 
 type LinkItemProps = {
   link: {
-    id: number
-    slug: string
-    url: string
-    createdAt: string | Date
-  }
-}
+    id: number;
+    slug: string;
+    url: string;
+    createdAt: string | Date;
+  };
+};
 
 export default function LinkItem({ link }: LinkItemProps) {
-  const router = useRouter()
-  const [editOpen, setEditOpen] = useState(false)
-  const [deleteOpen, setDeleteOpen] = useState(false)
-  const [url, setUrl] = useState(link.url)
-  const [slug, setSlug] = useState(link.slug)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [deleteError, setDeleteError] = useState<string | null>(null)
+  const router = useRouter();
+  const [editOpen, setEditOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [url, setUrl] = useState(link.url);
+  const [slug, setSlug] = useState(link.slug);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
 
-  const createdAt = new Date(link.createdAt)
+  const createdAt = new Date(link.createdAt);
 
   const handleUpdate = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setError(null)
-    setIsSubmitting(true)
+    event.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
 
     const result = await updateLinkAction({
       linkId: link.id,
       url,
       slug,
-    })
+    });
 
-    setIsSubmitting(false)
+    setIsSubmitting(false);
 
     if ("error" in result) {
-      setError(result.error ?? "Unable to update the link.")
-      return
+      setError(result.error ?? "Unable to update the link.");
+      return;
     }
 
-    setEditOpen(false)
-    router.refresh()
-  }
+    setEditOpen(false);
+    router.refresh();
+  };
 
   const handleDelete = async () => {
-    setDeleteError(null)
-    setIsDeleting(true)
+    setDeleteError(null);
+    setIsDeleting(true);
 
-    const result = await deleteLinkAction({ linkId: link.id })
+    const result = await deleteLinkAction({ linkId: link.id });
 
-    setIsDeleting(false)
+    setIsDeleting(false);
 
     if ("error" in result) {
-      setDeleteError(result.error ?? "Unable to delete the link.")
-      return
+      setDeleteError(result.error ?? "Unable to delete the link.");
+      return;
     }
 
-    setDeleteOpen(false)
-    router.refresh()
-  }
+    setDeleteOpen(false);
+    router.refresh();
+  };
 
   return (
     <Card>
@@ -237,5 +237,5 @@ export default function LinkItem({ link }: LinkItemProps) {
         </p>
       </CardContent>
     </Card>
-  )
+  );
 }

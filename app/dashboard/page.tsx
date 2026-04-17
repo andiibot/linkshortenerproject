@@ -1,13 +1,13 @@
-import { getLinksByUserId } from "@/data/links"
-import { auth } from "@clerk/nextjs/server"
+import { getLinksByUserId } from "@/data/links";
+import { auth } from "@clerk/nextjs/server";
 
-import CreateLinkDialog from "./CreateLinkDialog"
-import LinkItem from "./LinkItem"
+import CreateLinkDialog from "./CreateLinkDialog";
+import LinkItem from "./LinkItem";
 
 export default async function DashboardPage() {
-  const { userId } = await auth()
+  const { userId } = await auth();
 
-  const userLinks = await getLinksByUserId(userId!)
+  const userLinks = await getLinksByUserId(userId!);
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
@@ -30,5 +30,5 @@ export default async function DashboardPage() {
         </ul>
       )}
     </main>
-  )
+  );
 }
