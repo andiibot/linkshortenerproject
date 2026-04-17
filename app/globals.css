@@ -127,3 +127,22 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  [data-slot="button"][data-variant="default"] {
+    background-color: #ec4899;
+    color: #ffffff;
+    border-color: transparent;
+  }
+  .dark [data-slot="button"][data-variant="default"] {
+    background-color: #db2777;
+    color: #ffffff;
+  }
+  /* Ensure anchor inside button inherits color */
+  [data-slot="button"][data-variant="default"] a {
+    color: inherit;
+  }
+  [data-slot="button"][data-variant="default"]:hover {
+    filter: brightness(0.95);
+  }
+}
