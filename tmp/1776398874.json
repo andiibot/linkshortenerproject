@@ -1,0 +1,13 @@
+{
+  "sessionId": "46010971-1133-477a-b050-d2a9e7d256de",
+  "timestamp": 1776398873780,
+  "cwd": "C:\\Users\\andre\\OneDrive\\Documentos\\VSCode\\LinkShortener\\linkshortenerproject",
+  "toolName": "view",
+  "toolArgs": {
+    "path": "C:\\Users\\andre\\OneDrive\\Documentos\\VSCode\\LinkShortener\\linkshortenerproject"
+  },
+  "toolResult": {
+    "resultType": "success",
+    "textResultForLlm": ".env\n.git\n.github\n.gitignore\n.next\n.prettierignore\n.prettierrc\nAGENTS.md\nREADME.md\napp\nclerk-nextjs\ncomponents\ncomponents.json\ncustom.d.ts\ndata\ndb\ndrizzle\ndrizzle.config.ts\neslint.config.mjs\nhooks\nlib\nnext-env.d.ts\nnext.config.mjs\nnode_modules\npackage-lock.json\npackage.json\npostcss.config.mjs\nproxy.ts\npublic\ntmp\ntmp-check-slug.mjs\ntsconfig.json\ntsconfig.tsbuildinfo"
+  }
+}

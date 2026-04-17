@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "cat > tmp/$(date +%s).json"
+      },
+      {
+        "type": "command",
+        "powershell": "$input | Out-File -FilePath \"./tmp/$([int][double]::Parse((Get-Date -UFormat %s))).json\" -Encoding utf8"
+      }
+    ]
+  }
+}
